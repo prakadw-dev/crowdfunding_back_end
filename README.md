@@ -1,7 +1,5 @@
 # crowdfunding_back_end
 
-# A repo contain my She Codes Crowdfunding project back end
-
 # Concept/Name
 
 UpFunding/Fundarun - A crowdfunding platform where people will raise money to donate to cancer fighters based on their steps goals and others can pledge to support them.
