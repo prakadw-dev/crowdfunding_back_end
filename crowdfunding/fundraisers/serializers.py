@@ -26,3 +26,8 @@ class FundraiserDetailSerializer(FundraiserSerializer):
        instance.owner = validated_data.get('owner', instance.owner)
        instance.save()
        return instance
+   
+class PledgeDetailSerializer(PledgeSerializer):
+   def delete(self, instance):
+       instance.delete()
+       return instance

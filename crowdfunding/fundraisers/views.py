@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework.generics import get_object_or_404
 from .models import Fundraiser, Pledge
-from .serializers import FundraiserSerializer, PledgeSerializer, FundraiserDetailSerializer
+from .serializers import FundraiserSerializer, PledgeSerializer, FundraiserDetailSerializer, PledgeDetailSerializer
 from .permissions import IsOwnerOrReadOnly
 
 class FundraiserList(APIView):
@@ -71,3 +71,12 @@ class PledgeList(APIView):
            serializer.errors,
            status=status.HTTP_400_BAD_REQUEST
        )
+    
+class PledgeDetail(APIView):
+    
+   def delete(self, request, pk):
+       pledge = get_object_or_404(Pledge, pk=pk)
+       self.check_object_permissions(request, pledge)
+       serializer = PledgeDetailSerializer(pledge)
+       serializer.delete(pledge)
+       return Response(status.HTTP_204_NO_CONTENT)
