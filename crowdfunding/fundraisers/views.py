@@ -4,7 +4,7 @@ from rest_framework import status, permissions
 from rest_framework.generics import get_object_or_404
 from .models import Fundraiser, Pledge
 from .serializers import FundraiserSerializer, PledgeSerializer, FundraiserDetailSerializer, PledgeDetailSerializer
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly, IsSupporterOrReadOnly
 
 class FundraiserList(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
@@ -73,6 +73,7 @@ class PledgeList(APIView):
        )
     
 class PledgeDetail(APIView):
+   permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsSupporterOrReadOnly]
     
    def delete(self, request, pk):
        pledge = get_object_or_404(Pledge, pk=pk)
