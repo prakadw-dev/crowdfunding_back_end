@@ -27,17 +27,17 @@ As a user, I want to log in so my pledges and projects are tracked
 
 # API Spec
 
-| URL              | HTTP Method | Purpose                 | Request Body      | Success Response Code | Authentication/Authorisation    |
-| ---------------- | ----------- | ----------------------- | ----------------- | --------------------- | ------------------------------- |
-| /fundraisers/    | GET         | Return all fundraisers  | N/A               | 200                   | N/A                             |
-| /fundraisers/    | POST        | Create a new fundraiser | Fundraiser object | 201                   | Must be logged in               |
-| /fundraisers/:id | GET         | Return fundraiser by ID | N/A               | 200                   | N/A                             |
-| /fundraisers/:id | PUT         | Update a fundraiser     | Fundraiser object | 200                   | Must be logged in and the owner |
-| /pledges/        | GET         | Return all pledges      | N/A               | 200                   | N/A                             |
-| /pledges/        | POST        | Create a new pledge     | Fundraiser object | 201                   | Must be logged in               |
-| /pledges/:id     | GET         | Return fundraiser by ID | N/A               | 200                   | N/A                             |
-| /pledges/:id     | DELETE      | Delete a pledge by ID   | N/A               | 204                   | N/A                             |
-| /users/          | GET         | Return all users        | N/A               | 200                   | N/A                             |
+| URL              | HTTP Method | Purpose                 | Request Body      | Success Response Code | Authentication/Authorisation        |
+| ---------------- | ----------- | ----------------------- | ----------------- | --------------------- | ----------------------------------- |
+| /fundraisers/    | GET         | Return all fundraisers  | N/A               | 200                   | N/A                                 |
+| /fundraisers/    | POST        | Create a new fundraiser | Fundraiser object | 201                   | Must be logged in                   |
+| /fundraisers/:id | GET         | Return fundraiser by ID | N/A               | 200                   | N/A                                 |
+| /fundraisers/:id | PUT         | Update a fundraiser     | Fundraiser object | 200                   | Must be logged in and the owner     |
+| /pledges/        | GET         | Return all pledges      | N/A               | 200                   | N/A                                 |
+| /pledges/        | POST        | Create a new pledge     | Fundraiser object | 201                   | Must be logged in                   |
+| /pledges/:id     | GET         | Return fundraiser by ID | N/A               | 200                   | N/A                                 |
+| /pledges/:id     | DELETE      | Delete a pledge by ID   | N/A               | 204                   | Must be logged in and the supporter |
+| /users/          | GET         | Return all users        | N/A               | 200                   | N/A                                 |
 
 # DB Schema
 
